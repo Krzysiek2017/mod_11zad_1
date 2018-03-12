@@ -13,6 +13,7 @@ import Footer from './components/Footer/Footer';
 // Import Actions
 import { toggleAddPost } from './AppActions';
 import { switchLanguage } from '../../modules/Intl/IntlActions';
+import { createLaneRequest, fetchLanes } from '../Lane/LaneActions';
 
 export class App extends Component {
   constructor(props) {
@@ -22,6 +23,9 @@ export class App extends Component {
 
   componentDidMount() {
     this.setState({isMounted: true}); // eslint-disable-line
+
+      //this.props.dispatch(fetchLanes())
+
   }
 
   toggleAddPostSection = () => {

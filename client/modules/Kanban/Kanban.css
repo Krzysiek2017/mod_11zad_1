@@ -1,1 +1,5 @@
 /* Kanban styles */
+.AddLane {
+    color: gainsboro;
+    background-color: aliceblue;
+}
