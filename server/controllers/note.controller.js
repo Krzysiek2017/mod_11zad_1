@@ -50,19 +50,19 @@ export function deleteNote(req, res) {
 }
 
 export function editNote(req, res) {
-	if (!req.body.task) {
-		res.status(400).end();
-	}
+  if (!req.body.task) {
+    res.status(400).end();
+  }
 
-	Note.findOne({ id: req.params.noteId }).exec((err, note) => {
-		if (err) {
-			res.status(500).send(err);
-		}
-		note.update({ task: req.body.task }, (updateErr) => {
-			if (updateErr) {
-				res.status(500).send(err);
-			}
-			res.status(200).end();
-		});
-	});
+  Note.findOne({ id: req.params.noteId }).exec((err, note) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    note.update({ task: req.body.task }, updateErr => {
+      if (updateErr) {
+        res.status(500).send(err);
+      }
+      res.status(200).end();
+    });
+  });
 }

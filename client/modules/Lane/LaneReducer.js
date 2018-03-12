@@ -20,8 +20,6 @@ export default function lanes(state = initialState, action) {
     case DELETE_LANE:
   return state.filter(lane => lane.id !== action.laneId);
 
-    return lane;
-  };
     
     case EDIT_LANE: {
      const lane = { ...state[action.id], editing: true };
