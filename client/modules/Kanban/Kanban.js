@@ -21,11 +21,11 @@ const Kanban = props => (
   </div>
 );
 
-Kanban.need = [
+/*Kanban.need = [
   () => {
     return fetchLanes();
   }
-];
+];*/
 
 Kanban.propTypes = {
   lanes: PropTypes.array,
