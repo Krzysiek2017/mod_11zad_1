@@ -28,4 +28,4 @@ export default function notes(state = initialState, action) {
   }
 }
 
-export default NoteReducer;
+

@@ -1,6 +1,4 @@
-**
- * Root Reducer
- */
+// Root Reducer
 import { combineReducers } from "redux";
 
 // Import Reducers
