@@ -10,10 +10,7 @@ if (typeof require.ensure !== 'function') {
   };
 }
 
-/* Workaround for async react routes to work with react-hot-reloader till
-  https://github.com/reactjs/react-router/issues/2182 and
-  https://github.com/gaearon/react-hot-loader/issues/288 is fixed.
- */
+
 if (process.env.NODE_ENV !== 'production') {
   // Require async routes only in development for react-hot-reloader to work.
   require('./modules/Kanban/Kanban');

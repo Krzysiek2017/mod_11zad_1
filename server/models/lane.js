@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import Note from '../models/note'
 const Schema = mongoose.Schema;
 mongoose.plugin(schema => {
   schema.options.usePushEach = true;
@@ -25,6 +26,6 @@ function removeNotes(next) {
 
 laneSchema.pre("find", populateNotes);
 laneSchema.pre("findOne", populateNotes);
-laneSchema.pre("findAndRemove", removeNotes);
+laneSchema.pre("remove", removeNotes);
 
 export default mongoose.model("Lane", laneSchema);

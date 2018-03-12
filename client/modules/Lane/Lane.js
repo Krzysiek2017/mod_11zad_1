@@ -1,30 +1,31 @@
 import React, { PropTypes } from 'react';
-import NotesContainer from '../Note/NoteContainer';
+import NotesContainer from '../Note/NotesContainer.js';
+// Import Style
+import styles from './Lane.css';
 
 import Edit from '../../components/Edit';
 
-import styles from './Lane.css';
 
 class Lane extends React.Component {
-  render() {
+  render() {  
     const { connectDropTarget, lane, laneNotes, updateLane, addNote, deleteLane, editLane } = this.props;
     const laneId = lane.id;
 
     return connectDropTarget(
       <div className={styles.Lane}>
         <div className={styles.LaneHeader}>
-          <Edit
+          <Edit 
             className={styles.LaneName}
             editing={lane.editing}
             value={lane.name}
-            onValueClick={() => editLane(lane.id)}
+            onValueClick={() => editLane(laneId)}
             onUpdate={name => updateLane({...lane, name, editing: false})}
           />
           <div className={styles.LaneAddNote}>
             <button onClick={() => addNote({task: 'New Note'}, laneId)}>Add Note</button>
           </div>
           <div className={styles.LaneDelete}>
-            <button onClick={() => deleteLane(lane)}>Remove lane</button>
+            <button onClick={() => deleteLane(lane)}>Remove Lane</button>
           </div>
         </div>
         <NotesContainer
@@ -41,8 +42,8 @@ Lane.propTypes = {
   laneNotes: PropTypes.array,
   addNote: PropTypes.func,
   updateLane: PropTypes.func,
-  editing: PropTypes.bool,
   deleteLane: PropTypes.func,
+  editLane: PropTypes.func,
 };
 
 export default Lane;

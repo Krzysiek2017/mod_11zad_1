@@ -1,4 +1,8 @@
 /* Kanban styles */
+.Kanban {
+    margin: 10px;
+}
+
 .AddLane {
     color: gainsboro;
     background-color: aliceblue;

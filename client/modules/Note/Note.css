@@ -1,1 +1,19 @@
 /* Note styles */
+.Note {
+  list-style: none;
+  margin-top: 5px;
+}
+
+.Note > div > div {
+  padding: 5px 0 5px 10px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.Note > div > div:hover button {
+  opacity: 1;
+}

@@ -1,1 +1,32 @@
 /* Lane styles */
+
+.Lane {
+  border: 1px solid cadetblue;
+  width: 300px;
+  margin: 15px;
+  text-align: center;
+  background-color: beige;
+  padding: 20px;
+}
+
+.LaneHeader {
+  color: darkblue;
+  width: 100%;
+  border-bottom: 1px solid cadetblue;
+}
+
+.LaneAddNote,
+.LaneDelete {
+  padding: 20px;
+  display: inline-block;
+}
+
+.LaneAddNote button,
+.LaneDelete button {
+  padding: 5px;
+}
+
+.LaneName {
+  font-size: 20px;
+  color: cadetblue;
+}
