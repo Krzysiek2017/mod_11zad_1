@@ -34,14 +34,17 @@ export function getLanes(req, res) {
 }
 
 export function deleteLane(req, res) {
-  Lane.findOne({ id: req.params.laneId }).exec((err, lane) => {
-    if (err) {
+  Lane.findOne({id: req.params.laneId}).exec( (err, lane) => {
+    if(err) {
       res.status(500).send(err);
     }
-
-    lane.remove(() => {
-      res.status(200).end();
-    });
+    if(lane) {
+      lane.remove(() => {
+        res.status(200).send('Ok');
+      });
+    } else {
+      res.status(500).send('Something goes wrong');
+    }
   });
 }
 

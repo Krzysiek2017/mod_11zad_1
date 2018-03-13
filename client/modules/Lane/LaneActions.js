@@ -12,7 +12,6 @@ export const DELETE_LANE = 'DELETE_LANE';
 export const UPDATE_LANE = 'UPDATE_LANE';
 export const EDIT_LANE = 'EDIT_LANE';
 export const CREATE_LANES = 'CREATE_LANES';
-export const CREATE_NOTE = 'CREATE_NOTE';
 export const MOVE_BETWEEN_LANES = 'MOVE_BETWEEN_LANES';
 export const REMOVE_FROM_LANE = 'REMOVE_FROM_LANE';
 export const PUSH_TO_LANE = 'PUSH_TO_LANE';

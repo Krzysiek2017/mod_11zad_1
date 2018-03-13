@@ -12,4 +12,5 @@ router.route('/notes/:noteId').delete(NoteController.deleteNote);
 // Update a note
 router.route('/notes/:noteId').put(NoteController.editNote);
 
+
 export default router;

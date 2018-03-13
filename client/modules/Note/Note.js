@@ -4,6 +4,9 @@ import ItemTypes from '../Kanban/itemTypes';
 import {DragSource, DropTarget} from 'react-dnd';
 import {compose} from 'redux';
 
+import { connect } from 'react-redux';
+import callApi from '../../util/apiCaller';
+
 class Note extends React.Component {
   render() {
    const {
@@ -34,6 +37,7 @@ const noteSource = {
     return {
       id: props.id,
       laneId: props.laneId,
+      _id: props._id,
     };
   },
   isDragging(props, monitor) {
@@ -44,10 +48,11 @@ const noteSource = {
 const noteTarget = {
   hover(targetProps, monitor) {
     const sourceProps = monitor.getItem();
-
-    if (targetProps.id !== sourceProps.id) {
+      
+    if(targetProps.id !== sourceProps.id && targetProps.laneId === sourceProps.laneId  ) {
       targetProps.moveWithinLane(targetProps.laneId, targetProps.id, sourceProps.id);
-    }
+    } 
+
   }
 };
 
